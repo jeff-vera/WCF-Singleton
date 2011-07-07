@@ -1,17 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace Singleton
 {
+	[ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
 	public class SingletonService : ISingletonService
 	{
-		public string GetData(int value)
+		int _numberOfRequests = 0;
+
+		public SingletonResponse GetData()
 		{
-			return string.Format("You entered: {0}", value);
+			SingletonResponse response = new SingletonResponse
+			{
+				DateTimeStamp = DateTime.Now,
+				NumberOfRequests = _numberOfRequests++
+			};
+
+			return response;
 		}
 	}
 }

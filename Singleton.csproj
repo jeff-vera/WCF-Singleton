@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ISingletonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonResponse.cs" />
     <Compile Include="SingletonService.cs" />
   </ItemGroup>
   <ItemGroup>

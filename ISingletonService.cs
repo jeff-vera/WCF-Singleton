@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace Singleton
 {
@@ -11,7 +8,7 @@ namespace Singleton
 	public interface ISingletonService
 	{
 		[OperationContract]
-		string GetData(int value);
+		SingletonResponse GetData();
 	}
 
 }
